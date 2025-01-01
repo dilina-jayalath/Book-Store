@@ -22,3 +22,5 @@ export const navBarList = [
     link: "/contact",
   }
 ];
+
+export const apiKey = "&key=AIzaSyCNWHTRkIKfXd4j3enkFndsx1X5ygqDVpc";

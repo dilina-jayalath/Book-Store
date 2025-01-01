@@ -5,7 +5,7 @@ import Product from "../Products/Product";
 import SampleNextArrow from "./SampleNextArrow";
 import SamplePrevArrow from "./SamplePrevArrow";
 import axios from "axios";
-// import { paginationItems } from "../../../constants";s
+import { apiKey } from "../../../constants";
 
 
 const Phones = (props) => {
@@ -16,7 +16,7 @@ const Phones = (props) => {
     const getBooks = async () => {
       try {
         const res = await axios.get(
-          `https://www.googleapis.com/books/v1/volumes?q=${props.name}`
+          `https://www.googleapis.com/books/v1/volumes?q=${props.name}${apiKey}`
         );
         setBooks(res.data.items); // Set books to the items array from the response
         console.log("Books fetched successfully:", res.data.items);

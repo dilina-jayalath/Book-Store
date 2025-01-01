@@ -5,6 +5,7 @@ import { FaSearch, FaUser, FaCaretDown, FaShoppingCart } from "react-icons/fa";
 import Flex from "../../designLayouts/Flex";
 import { Link, useNavigate } from "react-router-dom";
 import axios from "axios";
+import {apiKey} from "../../../constants/index";
 
 const HeaderBottom = () => {
   // const products = useSelector((state) => state.orebiReducer.products || []);
@@ -43,7 +44,7 @@ const HeaderBottom = () => {
     }
     try {
       const response = await axios.get(
-        `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=5`
+        `https://www.googleapis.com/books/v1/volumes?q=${query}&maxResults=5${apiKey}`
       );
       const fetchedBooks = response.data.items || [];
       setBooks(fetchedBooks);
